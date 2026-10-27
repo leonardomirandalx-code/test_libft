@@ -28,3 +28,10 @@ int	main(void)
 	printf("OR: %d\n\n", atoi("-"));
 	return (0);
 }
+
+
+int main(int ac, char **av)
+{
+	printf("Test de ifisprintr\n");
+	
+}

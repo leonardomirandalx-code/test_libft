@@ -1,6 +1,5 @@
 #include "libft.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 static char	ft_change_mapi(unsigned int n, char c)
 {
