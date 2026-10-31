@@ -3,11 +3,12 @@
 
 int	main(void)
 {
-	int	n;
 	t_list	*a;
 
-	n = 42;
-	a = ft_lstnew(&n);
-	printf("%d\n", *(int *)a->content);
+	a = ft_lstnew("string\n");
+	printf("%s\n", (char *)a->content);
+	printf("%p\n", (void *)a->content);
+	printf("%p\n", (void *)a->next);
+	free (a);
 	return (0);
 }
