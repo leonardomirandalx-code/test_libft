@@ -2,28 +2,22 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
+	int	i;
 	int	c;
-	int	evaluate;
 
-	c = -1;
-	evaluate = 1;
-	while (c <= 255)
+	if (argc < 2)
 	{
-		if ((ft_isalpha(c) == 0 && isalpha(c) != 0) ||
-			(ft_isalpha(c) != 0 && isalpha(c) == 0))
-		{		
-			printf("FT for character ASCII %d: %d\n", c, ft_isalpha(c));
-			printf("OR for character ASCII %d: %d\n", c, isalpha(c));
-			printf("\n");
-			evaluate = 0;
-		}
-		c++;
+		printf("No characters were passed to test\n");
+		return (1);
 	}
-	if (evaluate == 1)
-		printf("Everything working fine :)\n");
-	else
-		printf("There is a difference in the output :(\n");
+	i = 1;
+	while (i < argc)
+	{
+		c = (unsigned char)argv[i][0];
+		printf("'%c' (ASCII: %d) = FT: %d | OR: %d\n", c, c, ft_isalpha(c), isalpha(c));
+		i++;
+	}
 	return (0);
 }
